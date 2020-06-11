@@ -21,18 +21,24 @@
 
 echo "Setuid files:"
 echo "============="
-find / -type f -executable -perm -4000 -ls 2>/dev/null|
-sort -k 3
+find / -type f -executable -perm -4000 -ls 2>/dev/null| # file commabnd  is used to find
+sort -k 3 #-k means to find short cut in looks 
+# -executeable is used to execute the command 
+# 2000 uid permission find
+# 2>/dev/null garbages the errors
 echo ""
 echo "Setgid files:"
 echo "============="
-find / -type f -executable -perm -2000 -ls 2>/dev/null|
+find / -type f -executable -perm -2000 -ls 2>/dev/null| #-2000 for gid permission find
 sort -k 6
 echo ""
 echo "10 largest files in system are:"
 echo "==============================="
-find / -type f -exec ls -alh --block-size=M {} \; 2>/dev/null|
-sort -rh -k5|
-head|
-awk '{print $5, $3, $9}'
+find / -type f -exec ls -alh --block-size=M {} \; 2>/dev/null| # --block size it will convert all size into memory MB and {} \; will execute all commands on each findings
+sort -rh -k5| #sort -rh sort in  reverse
+head| #head means first 10 line by default
+awk '{print $9, $3, $5}' #it will print 9 column 5 column and 3 column 
 echo ""
+
+
+
