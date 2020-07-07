@@ -9,46 +9,7 @@
 # TASK 3: Improve it by giving them 5 tries to get it right before failing
 #           *** Do not use the exit command, and do not use a loop (e.g. while or for)
 
-login_done="Password is correct."
-undone="It's Incorrect."
-referenceString="Password" # new variable is created to store password
-read -s -p "Insert Password:" myString #receiving userinput for password and saving into $myString
-echo
-if [ $myString = $referenceString ]; then # using if-else condition 5 times to check whether the input is valid or not by comparing it with $referenceString.
- echo "$login_done"
- echo
- else
-   echo "$undone"
-   read -s -p "Insert Password:" myString
-   if [ $myString = $referenceString ]; then
-   echo "$login_done"
-   echo
-   else
-       echo
-       echo "$undone"
-       read -s -p "Insert Password:" myString
- if [ $myString = $referenceString ]; then
-      echo "$login_done"
-      echo
-    else
-      echo
-      echo "$undone"
-	  read -s -p "Insert Password:" myString
-if [ $myString = $referenceString ]; then
-      echo "$login_done"
-      echo
-    else
-      echo
-      echo "$undone"
-	  read -s -p "Insert Password:" myString
-	if [ $myString = $referenceString ]; then
-    echo "$login_done"
-    echo
-  else
-    echo
-    echo "Try again Next time::"
- fi
-  fi
-fi
-fi
-fi
+myString="TestString"
+referenceString="password"
+
+[ $myString = $referenceString ] && echo "Correct!" || echo "Incorrect."

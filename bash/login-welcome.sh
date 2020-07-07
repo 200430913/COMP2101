@@ -17,33 +17,15 @@
 ###############
 # Variables   #
 ###############
-usrname="$USER" #environment variable is used to get username dynamically
-hostname="$(hostname)" #environment variable is used to get hostname dynamically
-day=$(date +%A) # date command is used to get what is the day of the week it its
-currenttime=$(date +%I:%M\ %p) #date command is used to get today's date 
+title="Overlord"
+myname="dennis"
+hostname="myhostname"
 
 ###############
 # Main        #
 ###############
-if [ "$day" = Monday ]; # using if else command to test day name and adding practise line to print message by using  day name
-then
-csay="Welcome to planet $hostname, the great teacher $usrname!"
-elif [ "$day" = Tuesday ];
-then
-csay="Welcome to planet $hostname, great core support person $usrname!"
-elif [ "$day" = Wednesday ];
-then
-csay="Welcome to planet $hostname, tech support $usrname!"
-elif [ "$day" = Thursday ];
-then
-csay="Welcome to planet $hostname, comedian $usrname!"
-elif [ "$day" = Friday ];
-then
-csay="Welcome to planet $hostname, licenced hacker $usrname!"
-elif [ "$day" = Saturday ];
-then
-csay="Welcome to planet $hostname, smocker $usrname!"
-else
-csay="Welcome to planet $hostname, non-smocker $usrname!"
-fi
-cowsay "$csay It is $currenttime on $day ."
+cat <<EOF
+
+Welcome to planet $hostname, "$title $myname!"
+
+EOF
